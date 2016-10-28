@@ -6,9 +6,11 @@
  */
 
 
+
 /**
  * FUNCTIONS
  * ---------------------------------------------------------------------------*/
+
 
 /**
  * Stopwatch function
@@ -28,7 +30,7 @@ function runtimeExceeded(start, maxRuntime) {
 /**
  * Stores all provided variables as UserProperties in the script
  *
- * @param {Object}  - a key:value store of all the variables to be stashed
+ * @param {Object} variables - a key:value store of all the variables to be stashed
  */
 function stash(variables) {
     var userProps = PropertiesService.getUserProperties();
@@ -46,8 +48,8 @@ function stash(variables) {
 /**
  * Pops keys and values from UserProperties into an object
  *
- * @param {Object} keys - an object with variable names and stringified values
- * @return {Object} completed key:value store for keys that were provided
+ * @param  {Object} keys - an object with variable names and stringified values
+ * @return {Object}      - completed key:value store for keys that were provided
  */
 function pop(keys) {
     var userProps = PropertiesService.getUserProperties();
@@ -74,8 +76,8 @@ function pop(keys) {
 /**
  * Creates triggers to run the script again later
  * 
- * @param {string} funcToResume The name of the function to resume, taking no parameters
- * @param {Number} delay - The length of time in minutes to wait before resuming
+ * @param {string} funcToResume - The name of the function to resume, taking no parameters
+ * @param {Number} delay        - The length of time in minutes to wait before resuming
  */
 function resumeExecutionLater(funcToResume, delay) {
     clearTriggers();
